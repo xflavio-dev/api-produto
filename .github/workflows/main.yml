@@ -41,7 +41,7 @@ jobs:
           context: ./src          
           file: ./src/DockerFile
           push: true
-          tags:
+          tags: |
             xflavio/api-bootcamp-produto:latest
             xflavio/api-bootcamp-produto:v${{github.run_number}}
             
