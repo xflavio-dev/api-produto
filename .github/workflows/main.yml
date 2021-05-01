@@ -38,8 +38,8 @@ jobs:
         # uses: docker/build-push-action@e1b7f96249f2e4c8e4ac1519b9608c0d48944a1f
         uses: docker/build-push-action@v2.4.0
         with:          
-          context: api-produto/src          
-          file: api-produto/src/DockerFile
+          context: ./src          
+          file: ./src/Dockerfile
           push: true
           tags:
             xflavio/api-bootcamp-produto:latest
