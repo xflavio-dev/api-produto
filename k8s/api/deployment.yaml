@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: api
 spec:
-  replicas: 15
+  replicas: 10
   selector:
     matchLabels:
       app: api
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: xflavio/api-bootcamp-produto:v2
+          image: xflavio/api-bootcamp-produto:v1
           ports:
             - containerPort: 8080
           env:
