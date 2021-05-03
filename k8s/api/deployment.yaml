@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: api
 spec:
-  replicas: 10
+  replicas: 1
   selector:
     matchLabels:
       app: api
@@ -15,6 +15,15 @@ spec:
       containers:
         - name: api
           image: xflavio/api-bootcamp-produto:v1
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 0
+            periodSeconds: 10
+            timeoutSeconds: 1
+            successThreshold: 1
+            failureThreshold: 1
           ports:
             - containerPort: 8080
           env:
